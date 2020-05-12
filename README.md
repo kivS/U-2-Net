@@ -1,5 +1,31 @@
 # U^2-Net
 
+## My own changes
+
+- add requirements.txt for dependency locking 
+- added argparse arguments for model name selection and option to have colored image outputs
+- python version pyenv locking to 3.6.10
+
+### Installing everything
+
+- Python version installtion with pyenv
+	```
+	pyenv install
+	```
+
+- Install dependencies(in virutal env or another)
+	```
+	pip install -r requirements.txt
+	```
+
+- Download the pre-trained model [u2net.pth (173.6 MB)](https://drive.google.com/file/d/1ao1ovG1Qtx4b7EoskHXmi2E9rp5CHLcZ/view?usp=sharing) or [u2netp.pth (4.7 MB)](https://drive.google.com/file/d/1rbSTGKAE-MTxBYHd-51l2hMOQPT_7EPy/view?usp=sharing) and put it into the dirctory './saved_models/u2net/' and './saved_models/u2netp/'
+
+- Run inference
+	```
+	python u2net_test.py --model_name u2net --colored True
+	```
+
+
 The code for our newly accepted paper in Pattern Recognition 2020:
 ## U^2-Net: Going Deeper with Nested U-Structure for Salient Object Detection, [Xuebin Qin](https://webdocs.cs.ualberta.ca/~xuebin/), [Zichen Zhang](https://webdocs.cs.ualberta.ca/~zichen2/), [Chenyang Huang](https://chenyangh.com/), [Masood Dehghan](https://sites.google.com/view/masooddehghan), [Osmar R. Zaiane](http://webdocs.cs.ualberta.ca/~zaiane/) and [Martin Jagersand](https://webdocs.cs.ualberta.ca/~jag/).
 
