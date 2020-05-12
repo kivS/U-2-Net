@@ -74,12 +74,9 @@ def save_output(image_name, pred, d_dir, colored=False):
         img.putdata(newData)
         img.save(d_dir + imidx + '_COLORED.png', 'PNG')
 
-def main(colored=False):
+def main(colored=False, model_name='u2net'):
 
     # --------- 1. get image path and name ---------
-    model_name = 'u2net'
-    # model_name='u2netp'
-
     image_dir = './test_data/test_images/'
     prediction_dir = './test_data/' + model_name + '_results/'
     model_dir = './saved_models/' + model_name + '/' + model_name + '.pth'
@@ -143,5 +140,6 @@ def main(colored=False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--colored', default=False, type=bool, dest='colored', help='Save the colored version of the result. Default=False.')
+    parser.add_argument('--model_name', default='u2net', type=str, dest='model_name', help='The model name to use. Default=u2net. Options: [u2net, u2netp]')
     args = parser.parse_args()
-    main(args.colored)
+    main(args.colored, args.model_name)
